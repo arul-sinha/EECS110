@@ -38,3 +38,13 @@ void octaveUpEverywhere(Note song[], int length) {
     song[i].pitch = song[i].pitch + 8;
   }
 }
+
+Note octaveDown(Note n) {
+  n.pitch = pitch - 8;
+  return n;
+}
+void octaveDownEverywhere(Note song[], int length) {
+  for (int i = 0; i < length; i++){
+    song[i].pitch = song[i].pitch-8;
+  }
+}
