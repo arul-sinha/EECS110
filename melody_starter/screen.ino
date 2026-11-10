@@ -30,3 +30,21 @@ void showPlaying(int s, int v) {
   tft.setCursor(6, 58);
   tft.print(VERSION_NAME[v]);
 }
+
+void showEverything(int s, int v) {
+  tft.fillScreen(ST77XX_BLACK);
+  tft.setTextSize(2);
+  tft.setTextColor(ST77XX_YELLOW);
+  tft.setCursor(6,6);
+  tft.print("Playing:");
+  tft.setcursor(6,24);
+  tft.print("Mode:");
+  tft.setcursor(6,42);
+  tft.print("Setting:");
+  tft.setTextColor(ST77XX_WHITE);
+  tft.setcursor(130,6);
+  tft.print(SONG_NAME[s]);
+  tft.setcursor(130, 24);
+  tft.print(VERSION_NAME[v]);
+  tft.setcursor(130, 42);
+}
