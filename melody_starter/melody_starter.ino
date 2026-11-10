@@ -39,8 +39,8 @@ const int NONE = 0;   // what readButtons() can say: nothing was pressed,
 const int NEXT = 1;   // the next button was pressed,
 const int PLAY = 2;   // or the play button was pressed
 
-const int VERSIONS = 4;
-const char* VERSION_NAME[VERSIONS] = { "as written", "octave up", "twice as fast", "octave up, edited" };
+const int VERSIONS = 6;
+const char* VERSION_NAME[VERSIONS] = { "as written", "octave up", "twice as fast", "octave up, edited", "octave down", "octave down, edited" };
 
 Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_RST);
 int choice = 0;       // which song and version: song = choice / VERSIONS, version = choice % VERSIONS
@@ -89,6 +89,13 @@ void loop() {
     }
     if (v == 3) {
       octaveUpEverywhere(SONGS[s], SONG_LENGTH[s]);      // PIECE 4: edits the song itself
+      playSong(SONGS[s], SONG_LENGTH[s], asWritten);
+    }
+    if (v == 4) {
+      playSong(SONGS[s], SONG_LENGTH[s], octaveDown);
+    }
+    if (v == 5) {
+      octaveDownEverywhere(SONGS[s], SONG_LENGTH[s]);      // PIECE 4: edits the song itself
       playSong(SONGS[s], SONG_LENGTH[s], asWritten);
     }
     showChoice(s, v);
