@@ -17,8 +17,11 @@
 const int TEMPO = 120;   // quarter notes a minute
 
 float noteToHz(int pitch) {
-  
-  return 440.0 * pow(2.0, (pitch - 69) / 12.0);
+  if (pitch == REST) {
+    return 0.0;
+  }else {
+    return 440.0 * pow(2.0, (pitch - 69) / 12.0);
+  }
 }
 
 int eighthsToMs(int eighths) {

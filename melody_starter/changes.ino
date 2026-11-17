@@ -24,7 +24,9 @@ Note asWritten(Note n) {
 }
 
 Note octaveUp(Note n) {
-  n.pitch = n.pitch + 12;
+  if (n.pitch != REST) {
+    n.pitch = n.pitch + 12;
+  }
   return n;
 }
 
@@ -35,16 +37,22 @@ Note twiceAsFast(Note n) {
 
 void octaveUpEverywhere(Note song[], int length) {
   for (int i = 0; i<length; i++){
-    song[i].pitch = song[i].pitch + 12;
+    if (song[i].pitch != REST) {
+      song[i].pitch = song[i].pitch + 12;
+    }
   }
 }
 
 Note octaveDown(Note n) {
-  n.pitch = n.pitch - 12;
+  if (n.pitch != REST) {
+    n.pitch = n.pitch - 12;
+  }
   return n;
 }
 void octaveDownEverywhere(Note song[], int length) {
   for (int i = 0; i < length; i++){
-    song[i].pitch = song[i].pitch-12;
+    if (song[i].pitch != REST) {
+      song[i].pitch = song[i].pitch-12;
+    }
   }
 }

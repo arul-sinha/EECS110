@@ -11,7 +11,7 @@ const int NOTE_C4 = 60, NOTE_CS4 = 61, NOTE_D4 = 62, NOTE_DS4 = 63, NOTE_E4 = 64
 const int NOTE_C5 = 72, NOTE_CS5 = 73, NOTE_D5 = 74, NOTE_DS5 = 75, NOTE_E5 = 76, NOTE_F5 = 77, NOTE_FS5 = 78, NOTE_G5 = 79, NOTE_GS5 = 80, NOTE_A5 = 81, NOTE_AS5 = 82, NOTE_B5 = 83;
 const int NOTE_C6 = 84, NOTE_CS6 = 85, NOTE_D6 = 86, NOTE_DS6 = 87, NOTE_E6 = 88, NOTE_F6 = 89, NOTE_FS6 = 90, NOTE_G6 = 91, NOTE_GS6 = 92, NOTE_A6 = 93, NOTE_AS6 = 94, NOTE_B6 = 95;
 const int NOTE_C7 = 96;
-
+const int REST = 0;
 
 
 // A song is a list of rows. Each row is a note plus how long it lasts.

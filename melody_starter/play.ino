@@ -23,7 +23,7 @@ void playSong(Note song[], int length, Change change) {
     tone(SPEAKER_PIN, (int)(hz + 0.5));
     delay(eighthsToMs(n.eighths));
     noTone(SPEAKER_PIN);
-    
+    delay(GAP_MS);
     i ++;
   }
   
