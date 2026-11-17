@@ -60,7 +60,7 @@ void setup() {
   tft.setTextWrap(false);
   pinMode(SPEAKER_PIN, OUTPUT);
   setupButtons();
-  showChoice(choice / VERSIONS, choice % VERSIONS);
+  showEverything(choice / VERSIONS, choice % VERSIONS);
 }
 
 void loop() {
@@ -73,11 +73,11 @@ void loop() {
     if (choice >= SONG_COUNT * VERSIONS) {
       choice = 0;                     // past the last choice, back to the first
     }
-    showChoice(choice / VERSIONS, choice % VERSIONS);
+    showEverything(choice / VERSIONS, choice % VERSIONS);
   }
 
   if (pressed == PLAY) {
-    showPlaying(s, v);
+    showEverything(s, v);
     if (v == 0) {
       playSong(SONGS[s], SONG_LENGTH[s], asWritten);    // PIECE 3, with PIECE 4's rules
     }
@@ -98,6 +98,6 @@ void loop() {
       octaveDownEverywhere(SONGS[s], SONG_LENGTH[s]);      // PIECE 4: edits the song itself
       playSong(SONGS[s], SONG_LENGTH[s], asWritten);
     }
-    showChoice(s, v);
+    showEverything(s, v);
   }
 }
